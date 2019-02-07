@@ -12,6 +12,7 @@ export const getIncompleteTodos = gql`
   {
     profile {
       name
+      age
     }
   }
 `;
@@ -28,8 +29,8 @@ export const getCompleteTodos = gql`
 `;
 
 export const addTodo = gql`
-  mutation($todo_text: String!, $todo_user: String!) {
-    insert_todos(objects: [{ todo_text: $todo_text, todo_user: $todo_user }]) {
+  mutation($profile_name: String!, $profile_age: Integer!) {
+    insert_profile(objects: [{ name: $profile_name, age: $profile_age }]) {
       affected_rows
     }
   }

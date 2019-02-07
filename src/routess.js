@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Router, Link, Redirect, Switch } from "react-router-dom";
 import Login from './pages/login';
+import Signup from './pages/signup';
 import Dashboard from "./pages/dashboard";
 import Auth from "./services/Auth";
 import history from "./services/history";
@@ -57,6 +58,10 @@ class Routes extends Component {
             <Route
               path="/login"
               render={props => (auth.isAuthenticated() ? <Redirect to="/dashboard" /> : <Login auth={auth} />)}
+            />
+            <Route
+              path="/signup"
+              render={props => (<Signup auth={auth} />)}
             />
             <Route
             exact

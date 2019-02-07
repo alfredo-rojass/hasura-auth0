@@ -7,7 +7,7 @@ import {
     handleSubmit = (e) => {
       e.preventDefault();
       this.props.form.validateFields((err, values) => {
-        this.props.auth.login(values);
+        this.props.auth.signup(values);
         if (!err) {
           // this.props.auth.loginDefault();
           console.log('Received values of form: ', values);
@@ -41,11 +41,9 @@ import {
                   })(
                   <Checkbox>Remember me</Checkbox>
                   )}
-                  <a className="login-form-forgot" href="">Forgot password</a>
                   <Button type="primary" htmlType="submit" className="login-form-button" style={{width: 270}}>
-                  Log in
+                  Sign up
                   </Button>
-                  <a href="/signup">register now!</a>
               </Form.Item>
           </Form>
         </div>

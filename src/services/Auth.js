@@ -89,10 +89,11 @@ export default class Auth {
     localStorage.removeItem("isLoggedIn");
     localStorage.clear();
     // navigate to the home route
-    history.replace("/");
+    history.replace("/login");
   }
 
   loginDefault() {
+    console.log('------------------>');
     this.auth0.authorize();
   }
   
@@ -106,6 +107,7 @@ export default class Auth {
     }, function(err) {
       if (err) alert(err);
     });
+    history.replace("/login");
   }
   
   signup(values) {
@@ -118,6 +120,4 @@ export default class Auth {
       if (err) alert(err);
     });
   }
-
-
 }
